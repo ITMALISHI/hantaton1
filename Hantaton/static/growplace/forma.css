@@ -1,0 +1,39 @@
+header {
+font-weight: bold;
+position: fixed;
+left: 0;
+top: 0;
+}
+
+body {
+    background: #333; /* Цвет фона */
+    color: #fc0; /* Цвет текста */
+    background-color: linear-gradient(130deg,#0,#0 0% 80%,#0);
+   }
+.main {
+    margin-top: 3.6%;
+    background: rgb(17,153,158);
+background: linear-gradient(32deg, rgba(17,153,158,1) 2%, rgba(255,255,255,1) 51%);
+  
+}
+#logo1 {
+    width: 30%;
+    margin-left: 5%;
+}
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #6a11cb;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(130deg,#232323,#232323 0% 80%,#232323);
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(180deg,#232323,#232323 0% 70%,#232323));
+}
+
+p {
+    margin-right: 10%;
+    margin-left: 10%;
+    font-weight: 500;
+    font-size: 17    px;
+}

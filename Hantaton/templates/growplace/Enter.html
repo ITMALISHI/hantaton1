@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'growplace/styleForEnter.css' %}">
+</head>
+<body>
+
+    <div id="enter">
+        <div id="enter__Text">
+            Вход
+        </div>
+        <div id="regicterAccount">
+            Еще нет аккаунта? 
+            <a href="{% url 'reg' %}">
+                Зарегистрироваться
+            </a>
+        </div>
+
+        <form action="#" onsubmit="return validateFormForEnter()" method="post">
+            {% csrf_token %}
+            <div class="form-error">{{ form.non_field_errors }}</div>
+
+        {% for f in form %}
+        <p >{{ f }}</p>
+        <div class="form-error">{{ f.errors }}</div>
+        {% endfor %}
+            <button type="submit" id="button_enter" value="login">
+                Войти
+            </button>
+        </form>
+    </div>
+    <script src="{% static 'growplace/scriptForEnter.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script>
+
+<script>
+SmoothScroll({
+    // Время скролла 400 = 0.4 секунды
+    animationTime    : 1500,
+    // Размер шага в пикселях
+    stepSize         : 75,
+
+    // Дополнительные настройки:
+
+    // Ускорение
+    accelerationDelta : 30,
+    // Максимальное ускорение
+    accelerationMax   : 1,
+
+    // Поддержка клавиатуры
+    keyboardSupport   : true,
+    // Шаг скролла стрелками на клавиатуре в пикселях
+    arrowScroll       : 50,
+
+    // Pulse (less tweakable)
+    // ratio of "tail" to "acceleration"
+    pulseAlgorithm   : true,
+    pulseScale       : 4,
+    pulseNormalize   : 1,
+
+    // Поддержка тачпада
+    touchpadSupport   : true,
+})
+</script>
+</body>
+</html>

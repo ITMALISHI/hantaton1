@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+	<link rel="stylesheet" href="{% static 'growplace/registration.css' %}"></link>
+    <title>Регистрация</title>
+  </head>
+  <body>
+
+    <form class="registrationForm" method="post" onsubmit="return validateFormForRegister()">
+      <h1>Регистрация</h1>
+        {% csrf_token %}
+        {{ form.username }}
+        {{ form.email }}
+        {{ form.password1 }}
+      {{ form.password2 }}
+        {% for field, errors in form.errors.items %}
+            {{ errors }}
+        {% endfor %}
+	  <div class="checkOrg">
+		Я организатор
+		<input type="checkbox" name="org_box" id="org"/>
+	  </div>
+	  <button id="registrate" type="submit">Зарегистрироваться</button>
+    </form>
+    </div>
+  <script src="{% static 'growplace/scriptForRegistration.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script>
+
+<script>
+SmoothScroll({
+    // Время скролла 400 = 0.4 секунды
+    animationTime    : 1500,
+    // Размер шага в пикселях
+    stepSize         : 75,
+
+    // Дополнительные настройки:
+
+    // Ускорение
+    accelerationDelta : 30,
+    // Максимальное ускорение
+    accelerationMax   : 1,
+
+    // Поддержка клавиатуры
+    keyboardSupport   : true,
+    // Шаг скролла стрелками на клавиатуре в пикселях
+    arrowScroll       : 50,
+
+    // Pulse (less tweakable)
+    // ratio of "tail" to "acceleration"
+    pulseAlgorithm   : true,
+    pulseScale       : 4,
+    pulseNormalize   : 1,
+
+    // Поддержка тачпада
+    touchpadSupport   : true,
+})
+</script>
+  </body>
+</html>

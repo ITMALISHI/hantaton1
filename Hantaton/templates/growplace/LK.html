@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+	<link rel="stylesheet" href="LK.css"></link>
+    <title>Личный кабинет</title>
+  </head>
+  <body>
+    <div class="LK">
+      <h1>Личный кабинет</h1>
+	  
+	  <table>
+		<tr>
+			<td>
+				<div class="lable">
+					<p id="login">login</p>
+				</div>
+			</td>
+			<td rowspan="3" class="tdImg">
+				<img id="lkPhoto" src="" alt="">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="lable">
+					<p id="name">name</p>
+	  			</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="lable">
+					<p id="firstname">firstname</p>
+	  			</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="lable">
+					<p id="patronymic">patronymic</p>
+	  			</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="lable">
+					<p id="age">age</p>
+	  			</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="lable">
+					<p id="email">email</p>
+	  			</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="lable">
+					<p id="telNumber">telNumber</p>
+	  			</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="lable">
+					<p id="name">name</p>
+	 			</div>
+			</td>
+		</tr>
+	  </table>
+	  <button id="edit" >Изменить</button>
+    </div>
+  </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script>
+
+<script>
+SmoothScroll({
+    // Время скролла 400 = 0.4 секунды
+    animationTime    : 1500,
+    // Размер шага в пикселях
+    stepSize         : 75,
+
+    // Дополнительные настройки:
+
+    // Ускорение
+    accelerationDelta : 30,
+    // Максимальное ускорение
+    accelerationMax   : 1,
+
+    // Поддержка клавиатуры
+    keyboardSupport   : true,
+    // Шаг скролла стрелками на клавиатуре в пикселях
+    arrowScroll       : 50,
+
+    // Pulse (less tweakable)
+    // ratio of "tail" to "acceleration"
+    pulseAlgorithm   : true,
+    pulseScale       : 4,
+    pulseNormalize   : 1,
+
+    // Поддержка тачпада
+    touchpadSupport   : true,
+})
+</script>
+</html>

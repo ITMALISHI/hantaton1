@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YUGRAIT</title>
+   
+    <link rel="stylesheet" href="{% static 'growplace/FAQ.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    
+</head>
+<body style="background:rgba(17,153,158,0.2) ">
+ <header class="navbar navbar-expand-lg navbar-dark bg-light gradient-custom fixed-top ">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+         <img src="{% static 'growplace/logo.png' %}" alt="" id="logo1">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        {% if request.user.is_authenticated %}
+            {% if user.groups.all.0.name == 'Organizer' %}
+            <li><a href="" class="nav-link px-2 text-white ">Организаторам</a></li>
+            {% endif %}
+        {% endif %}
+          <li><a href="#" class="nav-link px-2 text-white">Мероприятия</a></li>
+
+          <li class="nav-item dropdown" >
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            #наВзлёт
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'forma' %}">Хочу узнать себя</a></li>
+            <li><a class="dropdown-item" href="{% url 'takeoff' %}">Хочу прокачаться</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{% url 'faq' %}">FAQ #наВзлёт</a></li>
+          </ul>
+        </li>
+          <li><a href="#" class="nav-link px-2 text-white">О нас</a></li>
+        </ul>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input type="search" class="form-control form-control-dark" placeholder="Найти IT-дело..." aria-label="Search" id="search1">
+        </form>
+
+        <div class="text-end">
+            {% if request.user.is_authenticated %}
+                <a href="{% url 'logout' %}"><button type="button" class="btn btn-light ">Выйти</button></a>
+            {% else %}
+
+                <a href="{% url 'login' %}"><button type="button" class="btn btn-outline-light me-2">Войти</button></a>
+                <a href="{% url 'reg' %}"><button type="button" class="btn btn-light ">Регистрация</button></a>
+            {% endif %}
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main">
+    <h2>Правила #НаВзлет на нашем проекте очень просты.</h2>
+   
+     <p>Вы ноль в программировании? Во вкладке #наВзлёт вы найдете пункт хочу узнать себя. Именно там вы можете пройти уникальный тест на выявление вашей профориентации в IT-сфере. С подробным описанием каждого направления ознакомиться можно после прохождения теста.</p>
+<h2>У вас уже есть опыт в программировании? </h2>
+
+<p>Самое время тыкнуть ссылочку «Хочу прокачаться?», она переведет вас в незабываемую игру. Она состоит из чек-поинтов в виде заданий для прокачки ваших hard-skills и мероприятий вашего уровня. Благодаря этому обучению вы получаете баллы, как и за участие в мероприятиях на главной странице, по итогу ваш уровень будет увеличиваться. Сердечки это ваши жизни, потерять их можно, если вы давно не посещали сайт.
+Задача в игре — вырастить мамонта, с помощью пути с чек-поинтами.</p>
+
+ 
+ <h2>История создания логотипа</h2>
+ <p> <b>Мамонт</b> <br>
+ Как образ югорского характера, за его внешней суровостью скрывается мягкость и радушие.</p>
+ 
+
+  </div>
+   
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script>
+
+<script>
+SmoothScroll({
+    // Время скролла 400 = 0.4 секунды
+    animationTime    : 1500,
+    // Размер шага в пикселях
+    stepSize         : 75,
+
+    // Дополнительные настройки:
+
+    // Ускорение
+    accelerationDelta : 30,
+    // Максимальное ускорение
+    accelerationMax   : 1,
+
+    // Поддержка клавиатуры
+    keyboardSupport   : true,
+    // Шаг скролла стрелками на клавиатуре в пикселях
+    arrowScroll       : 50,
+
+    // Pulse (less tweakable)
+    // ratio of "tail" to "acceleration"
+    pulseAlgorithm   : true,
+    pulseScale       : 4,
+    pulseNormalize   : 1,
+
+    // Поддержка тачпада
+    touchpadSupport   : true,
+})
+</script>
+</body>
+</html>
